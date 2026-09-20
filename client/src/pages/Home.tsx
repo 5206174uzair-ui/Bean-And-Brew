@@ -37,7 +37,7 @@ export default function Home() {
 
       <section className="intro section-shell">
         <div className="intro__label"><span className="eyebrow__line eyebrow__line--dark" /> The everyday ritual</div>
-        <div className="intro__copy"><h2>Good coffee is<br /><em>always</em> a good idea.</h2><p>We believe the best parts of the day happen in the in-between: the first sip, the corner table, the friend who stays for one more. Copper Kettle is your neighborhood pause button.</p><Link href="/menu" className="text-link">Meet the menu <ArrowUpRight size={16} /></Link></div>
+        <div className="intro__copy"><h2>Good coffee is<br /><em>always</em> a good idea.</h2><p>We believe the best parts of the day happen in the in-between: the first sip, the corner table, the friend who stays for one more. Bean &amp; Brew is your neighborhood pause button.</p><Link href="/menu" className="text-link">Meet the menu <ArrowUpRight size={16} /></Link></div>
       </section>
 
       <section className="story-strip">
@@ -46,12 +46,12 @@ export default function Home() {
       </section>
 
       <section className="highlights section-shell">
-        <div className="section-heading"><div><p className="eyebrow">Why Copper Kettle</p><h2>Made for the<br /><em>long way round.</em></h2></div><p className="section-heading__aside">No rush. No fuss.<br />Just really good things.</p></div>
+        <div className="section-heading"><div><p className="eyebrow">Why Bean &amp; Brew</p><h2>Made for the<br /><em>long way round.</em></h2></div><p className="section-heading__aside">No rush. No fuss.<br />Just really good things.</p></div>
         <div className="highlight-grid">{highlights.map((item) => <article className="highlight-card" key={item.number}><span className="highlight-card__number">{item.number}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}</div>
       </section>
 
       <section className="visit" id="visit">
-        <div className="visit__map"><div className="map-grid" /><div className="map-pin"><MapPin size={22} fill="currentColor" /></div><span className="map-label">Copper Kettle<br /><small>18 Mercer Lane</small></span></div>
+        <div className="visit__map"><div className="map-grid" /><div className="map-pin"><MapPin size={22} fill="currentColor" /></div><span className="map-label">Bean &amp; Brew<br /><small>18 Mercer Lane</small></span></div>
         <div className="visit__details"><p className="eyebrow">Come by sometime</p><h2>Your table is<br /><em>waiting.</em></h2><p className="visit__body">Tucked between the bookshop and the flower stall, we’re easy to find and hard to leave.</p><div className="visit__meta"><div><Clock3 size={17} /><span><strong>Open daily</strong>7:00 — 17:00</span></div><div><MapPin size={17} /><span><strong>18 Mercer Lane</strong>Brooklyn, NY 11211</span></div></div><a href="https://maps.google.com/?q=18+Mercer+Lane+Brooklyn+NY" className="button button--outline" target="_blank" rel="noreferrer">Get directions <ArrowUpRight size={16} /></a></div>
       </section>
 

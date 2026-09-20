@@ -19,7 +19,7 @@ function SiteHeader() {
       <div className="site-header__inner">
         <Link href="/" className="brand" onClick={() => setOpen(false)}>
           <span className="brand__mark"><Coffee size={17} strokeWidth={1.8} /></span>
-          <span className="brand__name">Copper Kettle</span>
+          <span className="brand__name">Bean &amp; Brew</span>
           <span className="brand__type">Cafe</span>
         </Link>
 
@@ -48,7 +48,7 @@ function SiteFooter() {
         <div>
           <Link href="/" className="brand brand--footer">
             <span className="brand__mark"><Coffee size={17} strokeWidth={1.8} /></span>
-            <span className="brand__name">Copper Kettle</span>
+            <span className="brand__name">Bean &amp; Brew</span>
             <span className="brand__type">Cafe</span>
           </Link>
           <p className="footer-note">Slow mornings, bright afternoons,<br />and something warm in between.</p>
@@ -59,7 +59,7 @@ function SiteFooter() {
           <div><span className="footer-label">Open daily</span><span>7:00 — 17:00</span><span>Kitchen until 16:00</span></div>
         </div>
       </div>
-      <div className="footer-bottom"><span>© 2025 Copper Kettle Cafe</span><span>Made for slow days.</span></div>
+      <div className="footer-bottom"><span>© 2025 Bean &amp; Brew Cafe</span><span>Made for slow days.</span></div>
     </footer>
   );
 }
