@@ -11,7 +11,7 @@ const highlights = [
 
 function QuickAction({ icon, label, sublabel, href, external = false }: { icon: React.ReactNode; label: string; sublabel: string; href: string; external?: boolean }) {
   const content = <><span className="quick-action__icon">{icon}</span><span className="quick-action__copy"><strong>{label}</strong><small>{sublabel}</small></span><ArrowUpRight className="quick-action__arrow" size={17} /></>;
-  return external ? <a href={href} className="quick-action">{content}</a> : <Link href={href} className="quick-action">{content}</Link>;
+  return external ? <a href={href} aria-label={label} title={label} className="quick-action">{content}</a> : <Link href={href} aria-label={label} title={label} className="quick-action">{content}</Link>;
 }
 
 export default function Home() {

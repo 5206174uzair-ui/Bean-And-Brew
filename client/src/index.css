@@ -110,14 +110,14 @@
   .button--copper:hover { background: var(--creme); }
   .button--outline { color: var(--cacao); border-color: rgba(68, 41, 31, .25); }
   .button--outline:hover { color: var(--creme); background: var(--cacao); }
-  .quick-actions { position: absolute; right: max(1.25rem, calc((100vw - 1240px) / 2 + 1.25rem)); bottom: 73px; width: 286px; display: flex; flex-direction: column; border-top: 1px solid rgba(247, 239, 230, .32); }
-  .quick-action { min-height: 72px; display: flex; align-items: center; gap: 13px; color: var(--creme); border-bottom: 1px solid rgba(247, 239, 230, .32); text-decoration: none; transition: padding .25s ease, background .25s ease; }
-  .quick-action:hover { padding-left: 9px; background: rgba(255,255,255,.06); }
-  .quick-action__icon { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid rgba(247, 239, 230, .5); border-radius: 50%; color: var(--copper-light); }
-  .quick-action__copy { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+  .quick-actions { position: absolute; top: 50%; right: max(1.25rem, calc((100vw - 1240px) / 2 + 1.25rem)); bottom: auto; width: auto; display: flex; flex-direction: column; gap: 10px; transform: translateY(-50%); }
+  .quick-action { position: relative; width: 45px; height: 45px; display: grid; place-items: center; color: var(--creme); border: 1px solid rgba(247, 239, 230, .52); border-radius: 50%; background: rgba(36, 21, 15, .3); text-decoration: none; backdrop-filter: blur(8px); transition: transform .2s ease, color .2s ease, background .2s ease; }
+  .quick-action:hover { color: var(--espresso); background: var(--copper-light); transform: translateX(-4px); }
+  .quick-action__icon { display: grid; place-items: center; color: inherit; }
+  .quick-action__copy { display: none; flex-direction: column; gap: 4px; flex: 1; }
   .quick-action__copy strong { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
   .quick-action__copy small { color: rgba(247,239,230,.56); font-size: 11px; }
-  .quick-action__arrow { color: var(--copper-light); }
+  .quick-action__arrow { display: none; }
   .hero__side-note { position: absolute; bottom: 73px; left: max(1.25rem, calc((100vw - 1240px) / 2 + 1.25rem)); display: flex; align-items: center; gap: 11px; color: rgba(247,239,230,.55); font-size: 10px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; transform: rotate(-90deg) translateX(-100%); transform-origin: left top; }
   .hero__stamp { position: absolute; right: 50%; bottom: 24px; display: flex; align-items: center; gap: 9px; color: rgba(247,239,230,.58); font-size: 9px; letter-spacing: .12em; line-height: 1.4; text-transform: uppercase; }
   .intro { display: grid; grid-template-columns: 1fr 2fr; gap: 70px; padding-top: 145px; padding-bottom: 152px; }
@@ -219,9 +219,13 @@
     .hero__content { padding-top: 175px; }
     .hero h1 { font-size: clamp(59px, 16vw, 92px); }
     .hero__lede { font-size: 13px; }
-    .quick-actions { right: 1.25rem; bottom: 28px; left: 1.25rem; width: auto; }
-    .quick-action { min-height: 57px; }
-    .quick-action__icon { width: 30px; height: 30px; }
+    .quick-actions { top: auto; right: 1.25rem; bottom: 28px; left: 1.25rem; width: auto; display: flex; gap: 0; transform: none; }
+    .quick-action { width: auto; height: 57px; min-height: 57px; display: flex; align-items: center; justify-items: initial; gap: 13px; border: 0; border-top: 1px solid rgba(247, 239, 230, .32); border-radius: 0; background: transparent; backdrop-filter: none; }
+    .quick-action:last-child { border-bottom: 1px solid rgba(247, 239, 230, .32); }
+    .quick-action:hover { color: var(--creme); background: rgba(255,255,255,.06); transform: none; }
+    .quick-action__icon { width: 30px; height: 30px; display: grid; place-items: center; border: 1px solid rgba(247, 239, 230, .5); border-radius: 50%; color: var(--copper-light); }
+    .quick-action__copy { display: flex; }
+    .quick-action__arrow { display: block; margin-left: auto; color: var(--copper-light); }
     .hero__side-note, .hero__stamp { display: none; }
     .intro { grid-template-columns: 1fr; gap: 35px; padding-top: 90px; padding-bottom: 95px; }
     .intro__copy { max-width: 100%; }
