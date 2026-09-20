@@ -8,6 +8,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import Menu from "./pages/Menu";
 import NotFound from "./pages/NotFound";
+import Admin from "./pages/Admin";
 
 function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -65,18 +66,18 @@ function SiteFooter() {
 }
 
 function Router() {
-  return (
-    <>
-      <SiteHeader />
+  const [location] = useLocation();
+  const routes = (
       <Switch>
+        <Route path="/admin" component={Admin} />
         <Route path="/" component={Home} />
         <Route path="/menu" component={Menu} />
         <Route path="/404" component={NotFound} />
         <Route component={NotFound} />
       </Switch>
-      <SiteFooter />
-    </>
   );
+  if (location.startsWith("/admin")) return routes;
+  return <><SiteHeader />{routes}<SiteFooter /></>;
 }
 
 export default function App() {
