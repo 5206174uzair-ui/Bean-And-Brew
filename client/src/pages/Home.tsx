@@ -1,5 +1,4 @@
 import { ArrowDownRight, ArrowUpRight, Clock3, Instagram, MapPin, Phone, ShoppingBag, Sparkles } from "lucide-react";
-import { useState } from "react";
 import { Link } from "wouter";
 
 const heroImage = "/manus-storage/copper-kettle-hero_67f4ae9a.jpg";
@@ -16,25 +15,11 @@ function QuickAction({ icon, label, sublabel, href, external = false }: { icon: 
 }
 
 export default function Home() {
-  const [pointer, setPointer] = useState({ x: 0, y: 0 });
-  const sceneStyle = { "--scene-x": `${pointer.x}px`, "--scene-y": `${pointer.y}px` } as React.CSSProperties;
-
   return (
     <main>
-      <section className="hero hero--3d" style={{ backgroundImage: `url(${heroImage})` }} onPointerMove={(event) => { if (event.pointerType === "touch") return; const rect = event.currentTarget.getBoundingClientRect(); setPointer({ x: (event.clientX - rect.left - rect.width / 2) / 18, y: (event.clientY - rect.top - rect.height / 2) / 22 }); }} onPointerLeave={() => setPointer({ x: 0, y: 0 })}>
+      <section className="hero" style={{ backgroundImage: `url(${heroImage})` }}>
         <div className="hero__veil" />
         <div className="hero__grain" />
-        <div className="hero-3d" aria-label="A stylized three-dimensional coffee cup and saucer" style={sceneStyle}>
-          <div className="hero-3d__orb hero-3d__orb--one" />
-          <div className="hero-3d__orb hero-3d__orb--two" />
-          <div className="hero-3d__halo" />
-          <div className="hero-3d__steam hero-3d__steam--one" />
-          <div className="hero-3d__steam hero-3d__steam--two" />
-          <div className="hero-3d__saucer"><div className="hero-3d__saucer-rim" /></div>
-          <div className="hero-3d__cup"><div className="hero-3d__cup-rim"><span /></div><div className="hero-3d__cup-body" /><div className="hero-3d__handle" /></div>
-          <div className="hero-3d__bean hero-3d__bean--one" /><div className="hero-3d__bean hero-3d__bean--two" /><div className="hero-3d__bean hero-3d__bean--three" />
-          <span className="hero-3d__caption">Single origin · slow pour</span>
-        </div>
         <div className="hero__content">
           <p className="eyebrow eyebrow--light"><span className="eyebrow__line" /> Est. 2016 · Mercer Lane</p>
           <h1>A little more<br /><em>slow</em> in your day.</h1>
