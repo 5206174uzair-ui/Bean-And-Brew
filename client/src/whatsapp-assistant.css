@@ -1,4 +1,6 @@
 .whatsapp-assistant { position: fixed; z-index: 60; right: 22px; bottom: 22px; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; font-family: "Manrope", sans-serif; }
+.find-us-launcher { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; border: 1px solid rgba(255,255,255,.22); padding: 10px 13px; border-radius: 99px; color: #fff; background: rgba(68,41,31,.92); box-shadow: 0 10px 24px rgba(36,21,15,.2); font: inherit; font-size: 9px; font-weight: 800; letter-spacing: .1em; text-decoration: none; text-transform: uppercase; transition: transform .2s ease, background .2s ease; }
+.find-us-launcher:hover { transform: translateY(-2px); background: #6d4635; }
 .whatsapp-launcher { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; border: 0; padding: 12px 17px 12px 14px; border-radius: 99px; color: #fff; background: #1f9b63; box-shadow: 0 14px 35px rgba(31, 91, 59, .28); font: inherit; font-size: 11px; font-weight: 800; letter-spacing: .06em; text-decoration: none; text-transform: uppercase; transition: transform .2s ease, background .2s ease, box-shadow .2s ease; }
 .whatsapp-launcher:hover { transform: translateY(-3px); background: #168451; box-shadow: 0 18px 42px rgba(31, 91, 59, .34); }
 .whatsapp-launcher:active { transform: scale(.97); }
@@ -40,4 +42,4 @@
 .whatsapp-page__intro > p { max-width: 430px; margin: 0 0 22px; color: var(--muted-ink); font-size: 14px; line-height: 1.8; }
 .whatsapp-page__note { display: inline-block; color: #879989; font-size: 10px; letter-spacing: .04em; }
 @media (max-width: 780px) { .whatsapp-page { grid-template-columns: 1fr; gap: 35px; padding: 115px 1.25rem 70px; } .whatsapp-page__back { margin-bottom: 42px; } .whatsapp-page h1 { font-size: clamp(62px, 17vw, 100px); } .whatsapp-panel--page { width: 100%; } }
-@media (max-width: 520px) { .whatsapp-launcher { width: 48px; min-height: 48px; justify-content: center; padding: 0; } .whatsapp-launcher span { display: none; } .whatsapp-page { padding-right: 15px; padding-left: 15px; } }
+@media (max-width: 520px) { .find-us-launcher { width: 40px; min-height: 40px; justify-content: center; padding: 0; } .find-us-launcher span, .whatsapp-launcher span { display: none; } .whatsapp-launcher { width: 48px; min-height: 48px; justify-content: center; padding: 0; } .whatsapp-page { padding-right: 15px; padding-left: 15px; } }

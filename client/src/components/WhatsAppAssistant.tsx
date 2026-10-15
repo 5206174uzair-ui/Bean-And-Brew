@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { Coffee, MessageCircle, Send } from "lucide-react";
+import { Coffee, MapPin, MessageCircle, Send } from "lucide-react";
 import { Link } from "wouter";
 
 type Message = {
@@ -83,6 +83,10 @@ export function WhatsAppChat() {
 export default function WhatsAppAssistant() {
   return (
     <div className="whatsapp-assistant">
+      <a className="find-us-launcher" href="https://maps.google.com/?q=18+Mercer+Lane+Brooklyn+NY" target="_blank" rel="noreferrer" aria-label="Find Bean and Brew on Google Maps">
+        <MapPin size={19} />
+        <span>Find us</span>
+      </a>
       <Link href="/whatsapp" className="whatsapp-launcher" aria-label="Open Bean and Brew WhatsApp assistant">
         <MessageCircle size={23} />
         <span>Chat with us</span>
