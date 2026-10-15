@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
-import { Coffee, MessageCircle, Send, X } from "lucide-react";
+import { Coffee, MessageCircle, Send } from "lucide-react";
+import { Link } from "wouter";
 
 type Message = {
   id: number;
@@ -9,7 +10,7 @@ type Message = {
 
 const suggestions = ["When is your kitchen open?", "Are you closed on Sundays?", "Where are you located?"];
 
-function answerQuestion(question: string) {
+export function answerQuestion(question: string) {
   const normalized = question.toLowerCase();
 
   if (normalized.includes("sunday") || normalized.includes("closed") || normalized.includes("open")) {
@@ -37,13 +38,11 @@ function answerQuestion(question: string) {
   return "I can help with opening hours, kitchen hours, the menu, vegetarian options, ordering, location, and contact details. What would you like to know?";
 }
 
-export default function WhatsAppAssistant() {
-  const [open, setOpen] = useState(false);
+export function WhatsAppChat() {
   const [draft, setDraft] = useState("");
   const [messages, setMessages] = useState<Message[]>([
     { id: 1, from: "bot", text: "Hi! I’m the Bean & Brew assistant. How can I help you today?" },
   ]);
-
   const nextId = useMemo(() => messages.length + 1, [messages.length]);
 
   function sendMessage(text = draft) {
@@ -58,35 +57,36 @@ export default function WhatsAppAssistant() {
   }
 
   return (
+    <section className="whatsapp-panel whatsapp-panel--page" aria-label="Bean and Brew WhatsApp assistant">
+      <header className="whatsapp-panel__header">
+        <div className="whatsapp-panel__identity">
+          <span className="whatsapp-panel__avatar"><Coffee size={17} /></span>
+          <span><strong>Bean &amp; Brew</strong><small>Usually replies instantly</small></span>
+        </div>
+        <span className="whatsapp-panel__live"><span /> Online</span>
+      </header>
+      <div className="whatsapp-panel__demo">Demo assistant · Ask anything about the cafe</div>
+      <div className="whatsapp-panel__messages" aria-live="polite">
+        {messages.map((message) => <div className={`whatsapp-message whatsapp-message--${message.from}`} key={message.id}>{message.text}<time>{message.from === "bot" ? "Bean & Brew" : "You"}</time></div>)}
+      </div>
+      <div className="whatsapp-panel__suggestions">
+        {suggestions.map((suggestion) => <button key={suggestion} onClick={() => sendMessage(suggestion)}>{suggestion}</button>)}
+      </div>
+      <form className="whatsapp-panel__composer" onSubmit={(event) => { event.preventDefault(); sendMessage(); }}>
+        <input value={draft} onChange={(event) => setDraft(event.target.value)} placeholder="Ask about the cafe..." aria-label="Ask the Bean and Brew assistant" />
+        <button type="submit" aria-label="Send message"><Send size={17} /></button>
+      </form>
+    </section>
+  );
+}
+
+export default function WhatsAppAssistant() {
+  return (
     <div className="whatsapp-assistant">
-      {open && (
-        <section className="whatsapp-panel" aria-label="Bean and Brew WhatsApp assistant">
-          <header className="whatsapp-panel__header">
-            <div className="whatsapp-panel__identity">
-              <span className="whatsapp-panel__avatar"><Coffee size={17} /></span>
-              <span><strong>Bean &amp; Brew</strong><small>Usually replies instantly</small></span>
-            </div>
-            <button className="whatsapp-panel__close" aria-label="Close cafe assistant" onClick={() => setOpen(false)}><X size={18} /></button>
-          </header>
-
-          <div className="whatsapp-panel__demo">Demo assistant · Ask anything about the cafe</div>
-          <div className="whatsapp-panel__messages" aria-live="polite">
-            {messages.map((message) => <div className={`whatsapp-message whatsapp-message--${message.from}`} key={message.id}>{message.text}<time>{message.from === "bot" ? "Bean & Brew" : "You"}</time></div>)}
-          </div>
-
-          <div className="whatsapp-panel__suggestions">
-            {suggestions.map((suggestion) => <button key={suggestion} onClick={() => sendMessage(suggestion)}>{suggestion}</button>)}
-          </div>
-          <form className="whatsapp-panel__composer" onSubmit={(event) => { event.preventDefault(); sendMessage(); }}>
-            <input value={draft} onChange={(event) => setDraft(event.target.value)} placeholder="Ask about the cafe..." aria-label="Ask the Bean and Brew assistant" />
-            <button type="submit" aria-label="Send message"><Send size={17} /></button>
-          </form>
-        </section>
-      )}
-      <button className={`whatsapp-launcher ${open ? "is-open" : ""}`} aria-label={open ? "Close WhatsApp assistant" : "Open WhatsApp assistant"} onClick={() => setOpen((current) => !current)}>
-        {open ? <X size={22} /> : <MessageCircle size={25} />}
-        {!open && <span>Chat with us</span>}
-      </button>
+      <Link href="/whatsapp" className="whatsapp-launcher" aria-label="Open Bean and Brew WhatsApp assistant">
+        <MessageCircle size={23} />
+        <span>Chat with us</span>
+      </Link>
     </div>
   );
 }

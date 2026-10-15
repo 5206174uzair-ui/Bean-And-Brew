@@ -1,4 +1,4 @@
-import { ArrowDownRight, ArrowUpRight, Clock3, Instagram, MapPin, Phone, ShoppingBag, Sparkles } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, Clock3, Instagram, MapPin, MessageCircle, ShoppingBag, Sparkles } from "lucide-react";
 import { Link } from "wouter";
 
 const heroImage = "/manus-storage/copper-kettle-hero_67f4ae9a.jpg";
@@ -30,7 +30,7 @@ export default function Home() {
         <div className="quick-actions" aria-label="Cafe shortcuts">
           <QuickAction icon={<MapPin size={19} />} label="Find us" sublabel="18 Mercer Lane" href="#visit" external />
           <QuickAction icon={<ShoppingBag size={19} />} label="Order now" sublabel="Take it with you" href="/menu" />
-          <QuickAction icon={<Phone size={19} />} label="Call now" sublabel="+1 555 014 2765" href="tel:+15550142765" external />
+          <QuickAction icon={<MessageCircle size={19} />} label="Chat with us" sublabel="Ask the cafe assistant" href="/whatsapp" />
         </div>
         <div className="hero__stamp"><Sparkles size={14} /><span>Freshly made<br />every morning</span></div>
       </section>

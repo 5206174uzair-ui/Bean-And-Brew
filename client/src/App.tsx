@@ -10,6 +10,7 @@ import Menu from "./pages/Menu";
 import NotFound from "./pages/NotFound";
 import Admin from "./pages/Admin";
 import WhatsAppAssistant from "./components/WhatsAppAssistant";
+import WhatsApp from "./pages/WhatsApp";
 
 function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -71,6 +72,7 @@ function Router() {
   const routes = (
       <Switch>
         <Route path="/admin" component={Admin} />
+        <Route path="/whatsapp" component={WhatsApp} />
         <Route path="/" component={Home} />
         <Route path="/menu" component={Menu} />
         <Route path="/404" component={NotFound} />
