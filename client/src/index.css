@@ -186,17 +186,15 @@
   .category-tabs button.is-active { position: relative; }
   .category-tabs button.is-active::after { content: ""; position: absolute; right: 0; bottom: -23px; left: 0; height: 2px; background: var(--copper); }
   .dietary-button { display: flex; align-items: center; gap: 8px; color: var(--cacao); white-space: nowrap; }
-  .menu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 74px 28px; padding-top: 69px; }
-  .menu-card__image-wrap { position: relative; aspect-ratio: 1.45 / 1; overflow: hidden; background: var(--oat); }
-  .menu-card__image { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .5s cubic-bezier(.23,1,.32,1); }
-  .menu-card__image--placeholder { display: grid; place-items: center; color: var(--copper); background: linear-gradient(135deg, var(--oat), var(--paper)); }
-  .menu-card:hover .menu-card__image { transform: scale(1.045); }
-  .menu-card__tag { position: absolute; top: 14px; left: 14px; padding: 8px 10px; color: var(--creme); background: var(--cacao); font-size: 9px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
-  .menu-card__body { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; padding-top: 20px; }
+  .menu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 28px; padding-top: 45px; }
+  .menu-card { position: relative; min-height: 150px; padding: 25px 0 28px; border-bottom: 1px solid rgba(68,41,31,.16); transition: transform .2s ease, border-color .2s ease; }
+  .menu-card:hover { transform: translateX(5px); border-color: var(--copper); }
+  .menu-card__tag { display: inline-flex; margin-top: 17px; padding: 6px 8px; color: var(--cacao); background: var(--copper-light); font-size: 8px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+  .menu-card__body { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
   .menu-card__category { margin: 0 0 8px; color: var(--copper); font-size: 9px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
-  .menu-card h2 { margin: 0; color: var(--cacao); font-family: "DM Serif Display", serif; font-size: 30px; font-weight: 400; letter-spacing: -.03em; }
-  .menu-card__price { color: var(--cacao); font-family: "DM Serif Display", serif; font-size: 21px; white-space: nowrap; }
-  .menu-card__description { max-width: 370px; margin: 9px 0 0; color: var(--muted-ink); font-size: 12px; line-height: 1.65; }
+  .menu-card h2 { margin: 0; color: var(--cacao); font-family: "DM Serif Display", serif; font-size: 28px; font-weight: 400; letter-spacing: -.03em; }
+  .menu-card__price { color: var(--copper); font-family: "DM Serif Display", serif; font-size: 21px; white-space: nowrap; }
+  .menu-card__description { max-width: 370px; margin: 10px 0 0; color: var(--muted-ink); font-size: 12px; line-height: 1.65; }
   .menu-empty { display: flex; align-items: center; gap: 13px; justify-content: center; padding: 100px 0; color: var(--muted-ink); }
   .menu-note { padding: 24px 1.25rem; color: var(--creme); background: var(--cacao); }
   .menu-note__inner { max-width: 1240px; margin: 0 auto; display: flex; align-items: center; gap: 14px; }
@@ -254,7 +252,7 @@
     .category-tabs { width: 100%; padding-bottom: 2px; }
     .category-tabs button.is-active::after { bottom: -12px; }
     .dietary-button { padding-top: 8px; }
-    .menu-grid { grid-template-columns: 1fr; gap: 48px; padding-top: 47px; }
+    .menu-grid { grid-template-columns: 1fr; gap: 0; padding-top: 28px; }
     .menu-content { padding-bottom: 90px; }
     .menu-note__inner { align-items: flex-start; flex-wrap: wrap; }
     .menu-note .text-link { margin-left: 34px; }
