@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import Menu from "./pages/Menu";
 import NotFound from "./pages/NotFound";
 import Admin from "./pages/Admin";
+import WhatsAppAssistant from "./components/WhatsAppAssistant";
 
 function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -77,7 +78,7 @@ function Router() {
       </Switch>
   );
   if (location.startsWith("/admin")) return routes;
-  return <><SiteHeader />{routes}<SiteFooter /></>;
+  return <><SiteHeader />{routes}<SiteFooter /><WhatsAppAssistant /></>;
 }
 
 export default function App() {
